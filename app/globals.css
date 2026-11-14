@@ -169,6 +169,52 @@
   }
 }
 
+/* A small focus bloom makes a newly selected timeline chapter feel alive. */
+.timeline-focus {
+  animation: timeline-focus 700ms ease-out;
+}
+
+@keyframes timeline-focus {
+  0% {
+    opacity: 0.72;
+    filter: saturate(0.85);
+  }
+  60% {
+    opacity: 1;
+    filter: saturate(1.2);
+  }
+  100% {
+    opacity: 1;
+    filter: saturate(1);
+  }
+}
+
+/* Perspective tilt gives each chapter a tactile, dimensional response on pointer devices. */
+.timeline-card {
+  --timeline-rotate-x: 0deg;
+  --timeline-rotate-y: 0deg;
+  transform: perspective(1200px) rotateX(var(--timeline-rotate-x))
+    rotateY(var(--timeline-rotate-y)) translateZ(0);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 180ms ease-out, box-shadow 300ms ease-out, opacity 700ms ease;
+}
+
+.timeline-card:hover {
+  box-shadow:
+    inset 0 1px 1px rgb(255 255 255 / 0.9),
+    0 22px 60px -18px rgb(0 0 0 / 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-focus,
+  .timeline-card {
+    animation: none;
+    transform: none;
+    transition: none;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

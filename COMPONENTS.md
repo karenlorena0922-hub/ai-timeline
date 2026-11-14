@@ -51,11 +51,12 @@ Photos are `StaticImageData` (static imports), so `next/image` keeps its intrins
 | `About` | `id`, `headline`, `body`, `stats` | `Heading`, `StatCard` |
 | `Contact` | `id`, `title`, `description`, `action` | `Aurora`, `GlassCard`, `Heading`, `Button` |
 | `SiteFooter` | `copyright`, `links` | none |
+| `Timeline` | `title`, `events` | `GlassCard`, `Heading`, `Button` |
 
 ## Pages (`app/`)
 
 - `RootLayout` (`app/layout.tsx`) loads the Geist fonts and defines the page metadata.
-- `Home` (`app/page.tsx`) holds the content constants and composes the sections.
+- `Home` (`app/page.tsx`) imports `Data/timeline.json` and composes the `Timeline` section with `Aurora`.
 
 ## CSS-only primitives (`app/globals.css`)
 

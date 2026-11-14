@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Landscapes, cities and the quiet details in between.",
+  title: "History of Artificial Intelligence",
+  description: "A visual timeline of the moments that shaped artificial intelligence.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
