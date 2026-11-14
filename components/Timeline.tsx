@@ -152,7 +152,7 @@ export function Timeline({ title, events }: TimelineProps) {
   );
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8 lg:px-12">
+    <div className="mx-auto w-full max-w-6xl min-w-0 px-4 pb-24 sm:px-8 lg:px-12">
       <header className="mx-auto max-w-4xl pt-28 text-center sm:pt-36">
         <p className="mb-5 text-xs font-semibold uppercase tracking-[0.24em] text-muted">A visual history</p>
         <Heading as="h1" size="display" className="text-balance">
@@ -163,7 +163,7 @@ export function Timeline({ title, events }: TimelineProps) {
         </p>
       </header>
 
-      <div className="mt-12 lg:grid lg:grid-cols-[170px_minmax(0,1fr)] lg:items-start lg:gap-14">
+      <div className="mt-12">
         <GlassCard
           as="nav"
           radius="lg"
@@ -217,7 +217,7 @@ export function Timeline({ title, events }: TimelineProps) {
           </GlassCard>
         </div>
 
-        <main className="relative mt-14 lg:mt-0">
+        <main className="relative mt-14 min-w-0 lg:mt-0">
           <div aria-hidden className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-transparent via-foreground/15 to-transparent" />
           <div className="space-y-10 sm:space-y-16">
             {events.map((event, index) => {
@@ -232,15 +232,15 @@ export function Timeline({ title, events }: TimelineProps) {
                   ref={(element) => {
                     eventRefs.current[event.id] = element;
                   }}
-                  className="relative grid scroll-mt-32 grid-cols-[32px_minmax(0,1fr)] items-start gap-4"
+                  className="relative grid min-w-0 grid-cols-[28px_minmax(0,1fr)] items-start gap-3 scroll-mt-32 sm:grid-cols-[32px_minmax(0,1fr)] sm:gap-4"
                 >
-                  <div className="relative z-10 mt-8 flex size-8 items-center justify-center rounded-full border border-background bg-background shadow-sm">
+                  <div className="relative z-10 mt-8 flex size-7 items-center justify-center rounded-full border border-background bg-background shadow-sm sm:size-8">
                     <span className={`size-2.5 rounded-full ${theme.dot} transition-transform duration-500 ${isActive ? "scale-125" : "scale-75"}`} />
                   </div>
 
                   <GlassCard
                     radius="lg"
-                    className={`timeline-card relative overflow-hidden p-6 transition-all duration-700 sm:p-8 ${
+                    className={`timeline-card w-full min-w-0 max-w-full break-words relative overflow-hidden p-4 transition-all duration-700 sm:p-8 ${
                       isActive
                         ? `timeline-focus ring-1 ring-foreground/10 ${theme.wash}`
                         : "opacity-70 hover:opacity-100"
@@ -258,23 +258,23 @@ export function Timeline({ title, events }: TimelineProps) {
                       pointerEvent.currentTarget.style.setProperty("--timeline-rotate-y", "0deg");
                     }}
                   >
-                    <span aria-hidden className={`pointer-events-none absolute -right-3 -top-8 text-[120px] font-semibold leading-none tracking-[-0.08em] opacity-[0.06] ${theme.accent}`}>
+                    <span aria-hidden className={`pointer-events-none absolute -right-3 -top-8 hidden text-[120px] font-semibold leading-none tracking-[-0.08em] opacity-[0.06] sm:block ${theme.accent}`}>
                       {event.year}
                     </span>
-                    <div className="relative flex items-center justify-between gap-4">
-                      <span className={`rounded-full bg-white/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] ${theme.accent}`}>
+                    <div className="relative flex flex-wrap items-center justify-between gap-2 sm:gap-4">
+                      <span className={`max-w-full rounded-full bg-white/70 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] sm:px-3 sm:text-[11px] sm:tracking-[0.16em] ${theme.accent}`}>
                         {event.category}
                       </span>
-                      <span className="font-mono text-[11px] text-muted">CHAPTER {String(index + 1).padStart(2, "0")}</span>
+                      <span className="font-mono text-[10px] text-muted sm:text-[11px]">CHAPTER {String(index + 1).padStart(2, "0")}</span>
                     </div>
 
-                    <time dateTime={event.date} className="relative mt-6 block font-mono text-sm text-muted">
+                    <time dateTime={event.date} className="relative mt-5 block font-mono text-xs text-muted sm:mt-6 sm:text-sm">
                       {formatDate(event.date)}
                     </time>
                     <Heading as="h2" size="card" className="relative mt-2 max-w-2xl text-balance">
                       {event.title}
                     </Heading>
-                    <p className="relative mt-4 max-w-2xl text-sm leading-6 text-muted sm:text-[15px]">
+                    <p className="relative mt-4 max-w-2xl text-[13px] leading-6 text-muted sm:text-[15px]">
                       {event.description}
                     </p>
 
