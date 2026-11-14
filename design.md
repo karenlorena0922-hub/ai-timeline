@@ -4,7 +4,7 @@ This document is the visual and interaction source of truth for the project. Rea
 
 ## Current experience
 
-The active home page is a visual history of artificial intelligence rendered from `Data/timeline.json`. The primary interaction is a vertical timeline with a viewport-fixed year navigator on the left at desktop widths, a single readable rail on mobile, and animated controls for jumping between years or moving to the previous and next event. Each event uses a category accent, chapter marker, active-card focus treatment, and pointer-driven perspective tilt on capable devices. The timeline replaces the earlier photography portfolio page; apply the design language below to the timeline rather than restoring the retired portfolio sections.
+The active home page is a visual history of artificial intelligence rendered from `Data/timeline.json`. The primary interaction is a vertical timeline with a viewport-fixed year navigator on the left at desktop widths, a content rail and cards that begin to its right, a single readable rail on mobile, and animated controls for jumping between years or moving to the previous and next event. Each event uses a category accent, chapter marker, active-card focus treatment, and pointer-driven perspective tilt on capable devices. The timeline replaces the earlier photography portfolio page; apply the design language below to the timeline rather than restoring the retired portfolio sections.
 
 ## Product character
 

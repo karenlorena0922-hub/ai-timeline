@@ -217,7 +217,7 @@ export function Timeline({ title, events }: TimelineProps) {
           </GlassCard>
         </div>
 
-        <main className="relative mt-14 min-w-0 lg:mt-0">
+        <main className="relative mt-14 min-w-0 lg:mt-0 lg:pl-[210px]">
           <div aria-hidden className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-transparent via-foreground/15 to-transparent" />
           <div className="space-y-10 sm:space-y-16">
             {events.map((event, index) => {
