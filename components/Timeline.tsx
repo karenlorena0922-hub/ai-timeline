@@ -168,12 +168,12 @@ export function Timeline({ title, events }: TimelineProps) {
           as="nav"
           radius="lg"
           aria-label="Timeline years"
-          className="fixed left-5 top-1/2 z-50 hidden w-[170px] -translate-y-1/2 p-5 lg:block"
+          className="fixed left-5 top-1/2 z-50 hidden w-[170px] -translate-y-1/2 p-5 xl:block"
         >
           {navigation}
         </GlassCard>
 
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <GlassCard
             as="nav"
             radius="full"
@@ -217,7 +217,7 @@ export function Timeline({ title, events }: TimelineProps) {
           </GlassCard>
         </div>
 
-        <main className="relative mt-14 min-w-0 lg:mt-0 lg:pl-[210px]">
+        <main className="relative mx-auto mt-14 min-w-0 max-w-4xl xl:mt-0">
           <div aria-hidden className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-transparent via-foreground/15 to-transparent" />
           <div className="space-y-10 sm:space-y-16">
             {events.map((event, index) => {
